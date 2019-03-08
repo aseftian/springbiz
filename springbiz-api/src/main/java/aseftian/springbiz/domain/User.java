@@ -12,18 +12,20 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
+@EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "t_users")
-public class User implements Serializable {
+public class User extends BaseDomain implements Serializable {
 	private static final long serialVersionUID = -3607797321496481084L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private Integer id;
 
 	@NotBlank
 	@Column(unique = true)
@@ -36,6 +38,11 @@ public class User implements Serializable {
 
 	@Size(max = 50)
 	private String lastName;
+
+	@Column(unique = true, nullable = true)
+	private String email;
+
+	private String password;
 
 	public User(@NotBlank @Size(min = 6, max = 50) String username, @NotBlank @Size(max = 50) String firstName,
 			@Size(max = 50) String lastName) {

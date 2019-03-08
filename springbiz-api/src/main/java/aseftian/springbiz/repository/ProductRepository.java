@@ -3,7 +3,7 @@ package aseftian.springbiz.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import aseftian.springbiz.domain.User;
+import aseftian.springbiz.domain.Product;
 
 /**
  * 
@@ -12,6 +12,6 @@ import aseftian.springbiz.domain.User;
  */
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Integer> {
+public interface ProductRepository extends JpaRepository<Product, Integer> {
 
 }
