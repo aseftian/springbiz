@@ -29,7 +29,7 @@ public class ProductAttribute extends BaseDomain implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	private String name;
+	private Integer productId;
+	private Integer productAttrMasterId;
 	private String value;
-	private String type;
 }
