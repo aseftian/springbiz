@@ -33,11 +33,11 @@ CREATE TABLE t_product_attr_master(
 	id INT NOT NULL AUTO_INCREMENT,
    name VARCHAR(20) NOT NULL,
    type VARCHAR(20) NULL,
-   desc VARCHAR(50) NULL,
+   description VARCHAR(50) NULL,
    PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO t_product_attr_master(name, type, DESC)
+INSERT INTO t_product_attr_master(name, type, description)
 	VALUES('SIZE','String','Ukuran');
 
 CREATE TABLE t_products(

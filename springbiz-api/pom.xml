@@ -69,7 +69,7 @@
 			<scope>test</scope> </dependency> -->
 	</dependencies>
 
-	<profiles>
+	<!-- <profiles>
 		<profile>
 			<id>dev</id>
 			<activation>
@@ -112,7 +112,7 @@
 				</resources>
 			</build>
 		</profile>
-	</profiles>
+	</profiles> -->
 
 
 	<build>

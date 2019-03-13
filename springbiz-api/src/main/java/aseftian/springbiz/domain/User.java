@@ -34,9 +34,11 @@ public class User extends BaseDomain implements Serializable {
 
 	@NotBlank
 	@Size(max = 50)
+	@Column(name = "first_name")
 	private String firstName;
 
 	@Size(max = 50)
+	@Column(name = "last_name")
 	private String lastName;
 
 	@Column(unique = true, nullable = true)

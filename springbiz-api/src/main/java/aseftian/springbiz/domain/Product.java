@@ -2,6 +2,7 @@ package aseftian.springbiz.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,7 +24,9 @@ public class Product extends BaseDomain implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	private String code;
+	private String sku;
 	private String name;
+	@Column(name="category_id")
+	private Integer categoryId;
 	
 }

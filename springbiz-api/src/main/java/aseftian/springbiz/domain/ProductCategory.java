@@ -29,6 +29,7 @@ public class ProductCategory extends BaseDomain implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+	private String code;
 	private String name;
 
 }
