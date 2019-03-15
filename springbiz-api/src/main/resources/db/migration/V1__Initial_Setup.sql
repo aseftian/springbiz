@@ -54,3 +54,14 @@ CREATE TABLE t_products(
 
 INSERT INTO t_products(sku, name, category_id, created_at, created_by)
 	VALUES('CARPO001','Cardigan Polos', 1, curdate(), 'system');
+
+CREATE TABLE t_product_attributes(
+    id INT NOT NULL AUTO_INCREMENT,
+    product_id INT NOT NULL,
+    attr_id INT NOT NULL,
+    value VARCHAR(50) NULL,
+    created_at TIMESTAMP NULL,
+	updated_at TIMESTAMP NULL,
+	created_by VARCHAR(50) NULL,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
