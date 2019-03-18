@@ -3,7 +3,7 @@ package aseftian.springbiz.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import aseftian.springbiz.domain.ProductAttribute;
+import aseftian.springbiz.domain.ProductDetail;
 
 /**
  * 
@@ -12,6 +12,6 @@ import aseftian.springbiz.domain.ProductAttribute;
  */
 
 @Repository
-public interface ProductAttributeRepository extends JpaRepository<ProductAttribute, Integer> {
+public interface ProductDetailRepository extends JpaRepository<ProductDetail, Integer> {
 
 }

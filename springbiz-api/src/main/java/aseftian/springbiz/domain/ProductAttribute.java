@@ -3,41 +3,31 @@ package aseftian.springbiz.domain;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 /**
  * 
  * @author ASeftian
- *
+ * @since 18/03/2019
  */
 
 @Data
 @NoArgsConstructor
-@EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "t_product_attributes")
-public class ProductAttribute extends BaseDomain implements Serializable {
-	private static final long serialVersionUID = -2074814457566746222L;
+public class ProductAttribute implements Serializable {
+	private static final long serialVersionUID = 3194184586722197953L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "product_id", nullable = false)
-	private Product product;
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "attr_id", nullable = false)
-	private ProductAttributeMaster attribute;
-	private String value;
+	private String name;
+	private String type;
+	private String description;
 }
