@@ -9,27 +9,25 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 /**
  * 
  * @author ASeftian
- *
+ * @since 18/03/2019
  */
 
 @Data
 @NoArgsConstructor
-@EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "t_product_attributes")
-public class ProductAttribute extends BaseDomain implements Serializable {
-	private static final long serialVersionUID = -2074814457566746222L;
+public class ProductAttribute implements Serializable {
+	private static final long serialVersionUID = 3194184586722197953L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	private Integer productId;
-	private Integer productAttrMasterId;
-	private String value;
+	private String name;
+	private String type;
+	private String description;
 }
