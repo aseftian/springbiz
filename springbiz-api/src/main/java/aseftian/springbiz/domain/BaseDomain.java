@@ -18,6 +18,8 @@ public class BaseDomain {
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "created_at")
 	private Date createdAt;
+	@Column(name="created_by")
+	private String createdBy;
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "updated_at")
 	private Date updatedAt;

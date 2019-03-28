@@ -6,8 +6,9 @@ CREATE TABLE t_users (
 	email VARCHAR(50) NULL,
 	password VARCHAR(50) NOT NULL,
 	created_at TIMESTAMP NULL,
-	updated_at TIMESTAMP NULL,
 	created_by VARCHAR(50) DEFAULT NULL,
+	updated_at TIMESTAMP NULL,
+	updated_by VARCHAR(50) DEFAULT NULL,
 	PRIMARY KEY (id),
 	UNIQUE KEY UK_username (username)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -20,8 +21,9 @@ CREATE TABLE t_categories(
     name VARCHAR(50),
     description VARCHAR(100) NULL,
 	created_at TIMESTAMP NULL,
-	updated_at TIMESTAMP NULL,
 	created_by VARCHAR(50) DEFAULT NULL,
+	updated_at TIMESTAMP NULL,
+	updated_by VARCHAR(50) DEFAULT NULL,
     PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -35,13 +37,14 @@ CREATE TABLE t_products(
     unit_price DOUBLE NOT NULL,
     disc DOUBLE NULL DEFAULT '0',
 	created_at TIMESTAMP NULL,
-	updated_at TIMESTAMP NULL,
 	created_by VARCHAR(50) NULL,
+	updated_at TIMESTAMP NULL,
+	updated_by VARCHAR(50) NULL,
    PRIMARY KEY (id),
    UNIQUE KEY UK_code (sku)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO t_products(sku, name, price, created_at, created_by)
+INSERT INTO t_products(sku, name, unit_price, created_at, created_by)
 	VALUES('CARPO001','Cardigan Polos', 45000.00, curdate(), 'system');
 
 CREATE TABLE t_product_categories(
@@ -73,8 +76,9 @@ CREATE TABLE t_product_details(
     value VARCHAR(20),
     description VARCHAR(50),
 	created_at TIMESTAMP NULL,
+	created_by VARCHAR(50) DEFAULT NULL,
 	updated_at TIMESTAMP NULL,
-	created_by VARCHAR(50) NULL,
+	updated_by VARCHAR(50) DEFAULT NULL,
     PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -97,7 +101,8 @@ CREATE TABLE t_orders(
     payment_bank VARCHAR(50) NULL,
     notes VARCHAR(100) NULL,
 	created_at TIMESTAMP NULL,
+	created_by VARCHAR(50) DEFAULT NULL,
 	updated_at TIMESTAMP NULL,
-	created_by VARCHAR(50) NULL,
+	updated_by VARCHAR(50) DEFAULT NULL,
     PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
